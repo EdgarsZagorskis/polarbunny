@@ -1,0 +1,23 @@
+{
+    "name": "ascii-drawing-machine",
+    "version": "0.0.5",
+    "description": "PolarBunny - an ASCII Drawing Machine",
+    "authors": [
+        "Edgars Zagorskis / Adniti"
+    ],
+    "main": "dist/src/index.html",
+    "readme": "README.md",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/edgarszagorskis/polarbunny.git"
+    },
+    "keywords": [
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/edgarszagorskis/polarbunny/issues"
+    }
+}

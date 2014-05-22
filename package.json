@@ -1,0 +1,29 @@
+{
+    "name": "ascii-drawing-machine",
+    "version": "0.0.5"   ,
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.githubusercontent.com/EdgarsZagorskis/polarbunny/master/LICENSE"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Edgars Zagorskis",
+            "email": "edgar@adniti.com",
+            "url": "http://adniti.com/"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/EdgarsZagorskis/polarbunny.git"
+    },
+    "bugs": {
+        "url": "https://github.com/EdgarsZagorskis/polarbunny/issues"
+    },
+    "dependencies": {
+        "bootstrap": "^3.0.0",
+        "zeroclipboard": "^2.0.0"
+    },
+    "main": "./src/index.html"
+}

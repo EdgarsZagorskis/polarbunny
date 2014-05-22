@@ -1,0 +1,42 @@
+body {
+
+}
+
+.compact {
+    line-height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+#canvas {
+  font-family: monospace;
+  &>ul {
+    @extend .compact;
+    display: block;
+    white-space: nowrap;
+    line-height: 70%;
+    &>li {
+      @extend .compact;
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      width: .8em;
+      cursor: pointer;
+      height: 1em;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+  &.grid {
+    &>ul {
+      &>li {
+        border: 1px solid #e0e0e0;
+      }
+    }
+  }
+
+}

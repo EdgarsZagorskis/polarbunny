@@ -1,0 +1,26 @@
+.compact, #canvas > ul, #canvas > ul > li {
+  line-height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#canvas {
+  font-family: monospace; }
+  #canvas > ul {
+    display: block;
+    white-space: nowrap;
+    line-height: 70%; }
+    #canvas > ul > li {
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      width: .8em;
+      cursor: pointer;
+      height: 1em;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+  #canvas.grid > ul > li {
+    border: 1px solid #e0e0e0; }
