@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=1.0">
 
     <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
@@ -29,6 +29,7 @@
                 <ul class="nav navbar-nav">
                     <li ng-class="{'active':toolbar.actives.showGrid==true}" data-ng-click="toggleGrid()"><a href="#">Show
                         Grid</a></li>
+                    <li data-ng-click="initCanvas()"><a href="#">Clear</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <label>Color:</label>
@@ -62,12 +63,17 @@
     <div>
         <div id="canvas" ng-class="{'grid':toolbar.actives.showGrid==true}">
             <ul ng-repeat="(rowIndex, row) in canvas track by $index">
-                <li ng-repeat="(cellIndex, cell) in row track by $index" ng-click="paintCell(rowIndex, cellIndex)"
+                <li ng-repeat="(cellIndex, cell) in row track by $index"
+                    ng-mousedown="enableMouseClick(rowIndex, cellIndex)"
+                    ng-mouseup="disableMouseClick(rowIndex, cellIndex)"
+                    ng-mouseover="paintCellWithMouse(rowIndex, cellIndex)"
+                    ng-click="paintCell(rowIndex, cellIndex)"
                     ng-bind="canvas[rowIndex][cellIndex].char"
                     ng-style="{color:canvas[rowIndex][cellIndex].fgColor,'background-color':canvas[rowIndex][cellIndex].bgColor}"></li>
             </ul>
         </div>
     </div>
+    {{mouseClicked}}
 
 </div>
 

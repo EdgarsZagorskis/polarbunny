@@ -53,9 +53,10 @@ app.controller('DrawController', ['$scope', function ($scope) {
         }
         return newCell;
 
-    }
+    }        ;
 
-    var initCanvas = function (importedCanvas) {
+
+    $scope.initCanvas = function (importedCanvas) {
         var newCanvas = {};
         for (var y = 1; y <= 25; y++) {
             newCanvas[y] = {};
@@ -66,6 +67,23 @@ app.controller('DrawController', ['$scope', function ($scope) {
         return newCanvas;
     };
 
+
+    $scope.enableMouseClick = function(x,y){
+        $scope.mouseClicked = true;
+        $scope.paintCell(x,y);
+    };
+
+    $scope.disableMouseClick = function(x,y){
+        $scope.mouseClicked = false;
+        $scope.paintCell(x,y);
+    };
+
+    $scope.paintCellWithMouse = function(x,y){
+        if ($scope.mouseClicked == true){
+            $scope.paintCell(x,y);
+        }
+    };
+
     $scope.paintCell = function (x, y) {
         $scope.canvas[x][y].char = $scope.toolbar.actives.char;
         $scope.canvas[x][y].fgColor = $scope.toolbar.actives.fgColor;
@@ -73,7 +91,7 @@ app.controller('DrawController', ['$scope', function ($scope) {
         localStorage['pbCanvas'] = JSON.stringify($scope.canvas);
     };
 
-    $scope.canvas = (typeof(localStorage['pbCanvas']) != 'undefined') ? initCanvas(JSON.parse(localStorage['pbCanvas'])) : initCanvas();
+    $scope.canvas = (typeof(localStorage['pbCanvas']) != 'undefined') ? $scope.initCanvas(JSON.parse(localStorage['pbCanvas'])) : $scope.initCanvas();
 
 
 }]);
